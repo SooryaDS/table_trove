@@ -118,7 +118,7 @@
             display: inline-block;
             margin: 10px;
             padding: 10px;
-            background-color:  #bdffff;
+            background-color: #bdffff;
             border: 1px solid #ddd;
             border-radius: 5px;
             width: 250px;
@@ -177,7 +177,6 @@
         .categories-grid .card {
             width: calc(23.33% - 20px);
             margin: 10px;
-            
         }
 
         @media (max-width: 768px) {
@@ -197,7 +196,7 @@
 <body>
     <header>
         <nav>
-            <img src="images/logo.png" alt="Logo" onclick="location.href='/dashboard'"> <!-- Replace 'logo.png' with your logo image path -->
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" onclick="location.href='/dashboard'"> <!-- Replace 'logo.png' with your logo image path -->
             <ul>
                 <li><a href="#">Restaurants</a></li>
                 <li><a href="/reservation">Reservations</a></li>
@@ -206,20 +205,20 @@
         <div class="search-bar">
             <input type="text" placeholder="Search...">
             <div class="profile-icon" onclick="location.href='/customer/profile'">
-                 <img src="images/profile.jpg" alt="Profile">
+                <img src="{{ asset('images/profile.jpg') }}" alt="Profile">
             </div>
         </div>
     </header>
 
     <section class="slider">
         <div class="slide">
-            <img src="images/offers1.png" alt="Offer 1">
+            <img src="{{ asset('images/offers1.png') }}" alt="Offer 1">
         </div>
         <div class="slide">
-            <img src="images/offer2.png" alt="Offer 2">
+            <img src="{{ asset('images/offer2.png') }}" alt="Offer 2">
         </div>
         <div class="slide">
-            <img src="images/offer3.png" alt="Offer 3">
+            <img src="{{ asset('images/offer3.png') }}" alt="Offer 3">
         </div>
     </section>
 
@@ -227,36 +226,35 @@
         <h2>Recommended Restaurants</h2>
         <div class="horizontal-scroll">
             <div class="card">
-                <img src="images/itarest.jpg" alt="italian restaurant">
+                <img src="{{ asset('images/itarest.jpg') }}" alt="Italian Restaurant">
                 <h3>Trattoria Del Corso</h3>
                 <button>More Info</button>
                 <button>View Menus</button>
             </div>
             <div class="card">
-                <img src="images/srires.jpg" alt="sri lankan restaurant">
+                <img src="{{ asset('images/srires.jpg') }}" alt="Sri Lankan Restaurant">
                 <h3>Manumi's Kitchen</h3>
                 <button>More Info</button>
                 <button>View Menus</button>
             </div>
             <div class="card">
-                <img src="images/mexrest.jpeg" alt="Mexican Restaurant">
+                <img src="{{ asset('images/mexrest.jpeg') }}" alt="Mexican Restaurant">
                 <h3>Tacos and Tequila</h3>
                 <button>More Info</button>
                 <button>View Menus</button>
             </div>
             <div class="card">
-                <img src="images/indres.jpg" alt="indian restaurant">
+                <img src="{{ asset('images/indres.jpg') }}" alt="Indian Restaurant">
                 <h3>Mother India</h3>
                 <button>More Info</button>
                 <button>View Menus</button>
             </div>
             <div class="card">
-                <img src="images/chirest.jpg" alt="chinese restauarant">
+                <img src="{{ asset('images/chirest.jpg') }}" alt="Chinese Restaurant">
                 <h3>Orient Chinese Restaurant</h3>
                 <button>More Info</button>
                 <button>View Menus</button>
             </div>
-            
         </div>
     </section>
 
@@ -264,40 +262,36 @@
         <h2>Categories</h2>
         <div class="categories-grid">
             <div class="card">
-                <img src="images/italiancat.jpg" alt="Italian">
+                <img src="{{ asset('images/italiancat.jpg') }}" alt="Italian">
                 <h4><a href="#">Italian</a></h4>
             </div>
             <div class="card">
-                <img src="images/chinesecat.jpg" alt="Chinese">
+                <img src="{{ asset('images/chinesecat.jpg') }}" alt="Chinese">
                 <h4><a href="#">Chinese</a></h4>
             </div>
             <div class="card">
-                <img src="images/mexicancat.jpg" alt="Mexican">
+                <img src="{{ asset('images/mexicancat.jpg') }}" alt="Mexican">
                 <h4><a href="#">Mexican</a></h4>
             </div>
             <div class="card">
-                <img src="images/indiancat.jpg" alt="Indian">
+                <img src="{{ asset('images/indiancat.jpg') }}" alt="Indian">
                 <h4><a href="#">Indian</a></h4>
             </div>
             <div class="card">
-                <img src="images/srilankancat.jpeg" alt="Sri Lankan">
+                <img src="{{ asset('images/srilankancat.jpeg') }}" alt="Sri Lankan">
                 <h4><a href="#">Sri Lankan</a></h4>
             </div>
             <div class="card">
-                <img src="images/thaicat.jpg" alt="Thai">
+                <img src="{{ asset('images/thaicat.jpg') }}" alt="Thai">
                 <h4><a href="#">Thai</a></h4>
             </div>
             <div class="card">
-                <img src="images/koreancat.jpg" alt="Korean">
+                <img src="{{ asset('images/koreancat.jpg') }}" alt="Korean">
                 <h4><a href="#">Korean</a></h4>
             </div>
             <div class="card">
-                <img src="images/japcat.jpg" alt="Japanese">
+                <img src="{{ asset('images/japcat.jpg') }}" alt="Japanese">
                 <h4><a href="#">Japanese</a></h4>
-            </div>
-            <div class="card">
-                <img src="images/othercat.jpg" alt="Other">
-                <h4><a href="#">Other</a></h4>
             </div>
         </div>
     </section>
@@ -307,14 +301,14 @@
         showSlides();
 
         function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
+            let slides = document.querySelectorAll('.slide');
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+            });
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            slides[slideIndex-1].style.display = "block";  
-            setTimeout(showSlides, 4000); // Change image every 4 seconds
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
     </script>
 </body>

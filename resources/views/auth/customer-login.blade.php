@@ -7,13 +7,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('{{ asset('images/wallpaper4.jpg') }}') no-repeat center center fixed;
-            background-size: cover;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            background: url({{ asset('images/wallpaper3.jpg') }}) no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
         }
         .login-container {
             background-color: #2a1d25;

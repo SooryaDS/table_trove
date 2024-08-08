@@ -14,7 +14,10 @@ class ProfileController extends Controller
         $user = Auth::user();
         $profile = $user->profile;
 
-        return view('customer.profile', compact('user', 'profile'));
+        $allergyOptions = ['Peanuts', 'Milk', 'Eggs', 'Shellfish', 'Soy', 'Wheat', 'Fish', 'Tree nuts', 'Sesame', 'Other'];
+        $preferenceOptions = ['Vegetarian', 'Vegan', 'Gluten-Free', 'Dairy-Free', 'Halal', 'Kosher', 'Paleo', 'Keto', 'Other'];
+
+        return view('customer.profile', compact('user', 'profile', 'allergyOptions', 'preferenceOptions'));
     }
 
     public function update(Request $request)
@@ -32,6 +35,7 @@ class ProfileController extends Controller
             'preferences' => 'nullable|array',
         ]);
 
+        // Update user details
         $user->name = $request->name;
         $user->email = $request->email;
 
@@ -41,15 +45,21 @@ class ProfileController extends Controller
 
         $user->save();
 
+        // Update profile details
         $profile->contact_number = $request->contact_number;
+
         if ($request->hasFile('profile_image')) {
+            if ($profile->profile_image) {
+                \Storage::disk('public')->delete($profile->profile_image);
+            }
             $profile->profile_image = $request->file('profile_image')->store('profile_images', 'public');
         }
-        $profile->allergies = $request->allergies;
-        $profile->preferences = $request->preferences;
+
+        $profile->allergies = $request->allergies ?? [];
+        $profile->preferences = $request->preferences ?? [];
 
         $profile->save();
 
-        return redirect()->route('profile.show')->with('success', 'Profile updated successfully');
+        return redirect()->route('customer.profile.show')->with('success', 'Profile updated successfully');
     }
 }
