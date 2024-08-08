@@ -1,21 +1,12 @@
 <?php
 
+// routes/web.php
+
 use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Auth\RestaurantAuthController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-// Home route
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -27,6 +18,7 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
     Route::get('register', [CustomerAuthController::class, 'showRegistrationForm'])->name('register');
     Route::post('register', [CustomerAuthController::class, 'register']);
     Route::post('logout', [CustomerAuthController::class, 'logout'])->name('logout');
+    Route::get('dashboard', [CustomerAuthController::class, 'dashboard'])->name('dashboard')->middleware('auth:customer');
 });
 
 // Restaurant authentication routes
@@ -36,4 +28,9 @@ Route::group(['prefix' => 'restaurant', 'as' => 'restaurant.'], function () {
     Route::get('register', [RestaurantAuthController::class, 'showRegistrationForm'])->name('register');
     Route::post('register', [RestaurantAuthController::class, 'register']);
     Route::post('logout', [RestaurantAuthController::class, 'logout'])->name('logout');
+});
+
+Route::middleware('auth')->group(function() {
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
