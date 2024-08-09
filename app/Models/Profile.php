@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
 
     /**
      * The attributes that are mass assignable.
@@ -39,4 +40,6 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+=======
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
 }

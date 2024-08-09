@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -41,4 +40,16 @@ class Customer extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+<<<<<<< HEAD
+=======
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
 }

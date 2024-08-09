@@ -7,7 +7,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+<<<<<<< HEAD
             background: url('{{ asset('images/wallpaper1.jpg') }}') no-repeat center center fixed;
+=======
+            background: url('images/wallpaper1.jpg') no-repeat center center fixed;
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
             margin: 0;
             padding: 0;
             background-color: #cd9cc0;
@@ -237,7 +241,11 @@
 <body>
 <header>
     <nav>
+<<<<<<< HEAD
         <img src="{{ asset('images/logo.png') }}" alt="Logo" onclick="location.href='/customer/dashboard'">
+=======
+        <img src="images/logo.png" alt="Logo" onclick="location.href='/dashboard'">
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
         <ul>
             <li><a href="#">Restaurants</a></li>
             <li><a href="#">Reservations</a></li>
@@ -245,9 +253,15 @@
     </nav>
     <div class="search-bar">
         <input type="text" placeholder="Search...">
+<<<<<<< HEAD
         <div class="profile-icon" onclick="location.href='/customer/profile'">
        
         <img src="{{ asset('images/profile.jpg') }}" alt="Profile">
+=======
+        <div class="profile-icon" onclick="location.href='/profile'">
+       
+            <img src="images/profile.jpg" alt="Profile">
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
         </div>
     </div>
 </header>
@@ -257,7 +271,11 @@
             <button class="edit-icon" onclick="document.getElementById('editModal').style.display='block'">✎</button>
             <div class="profile-info">
                 <div class="profile-info-left">
+<<<<<<< HEAD
                     <img src="{{ asset('images/profile.jpg') }}" alt="Profile Image">
+=======
+                    <img src="images/profile.jpg" alt="Profile Image">
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
                 </div>
                 <div class="profile-info-right">
                     <button onclick="document.getElementById('editModal').style.display='block'">Payments</button>

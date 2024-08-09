@@ -7,7 +7,11 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+<<<<<<< HEAD
             background: url('{{ asset('images/wallpaper2.jpg') }}') no-repeat center center fixed;
+=======
+            background: url('{{ asset('images/wallpaper4.jpg') }}') no-repeat center center fixed;
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -16,6 +20,7 @@
             margin: 0;
         }
         .register-container {
+<<<<<<< HEAD
             margin-top: 500px;
             background-color: #2a1d25;
             padding: 10px;
@@ -29,18 +34,37 @@
         .register-container h2 {
             margin-bottom: 10px;
             font-size: 24px;
+=======
+            background-color: #2a1d25;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+            color: white;
+            opacity: 0.95;
+        }
+        .register-container h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
             text-align: center;
             color: #e4cfdc;
         }
         .register-container label {
             display: block;
             margin-bottom: 8px;
+<<<<<<< HEAD
             font-size: 14px;
+=======
+            font-size: 16px;
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
             color: #fff;
         }
         .register-container input[type="text"],
         .register-container input[type="email"],
         .register-container input[type="password"] {
+<<<<<<< HEAD
             width: 90%;
             padding: 10px;
             margin-bottom: 15px;
@@ -68,6 +92,34 @@
             border-radius: 4px;
             color: #fff;
             font-size: 16px;
+=======
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #ead8f4;
+        }
+        .logo-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .logo-container img {
+            width: 150px;
+            height: auto;
+        }
+        .register-container button {
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0;
+            display: block;
+            background-color: #9e1e8b;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 18px;
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
             cursor: pointer;
             font-weight: bold;
             transition: 0.3s;
@@ -76,7 +128,11 @@
             background-color: #892abc;
         }
         .register-container .no-account {
+<<<<<<< HEAD
             margin-top: 15px;
+=======
+            margin-top: 20px;
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
             text-align: center;
         }
         .register-container .no-account a {
@@ -86,6 +142,18 @@
         .register-container .no-account a:hover {
             text-decoration: underline;
         }
+<<<<<<< HEAD
+=======
+        .cuisine-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .cuisine-options label {
+            font-size: 14px;
+        }
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
     </style>
 </head>
 <body>

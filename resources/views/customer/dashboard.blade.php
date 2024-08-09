@@ -196,7 +196,11 @@
 <body>
     <header>
         <nav>
+<<<<<<< HEAD
             <img src="{{ asset('images/logo.png') }}" alt="Logo" onclick="location.href='/customer/dashboard'"> <!-- Replace 'logo.png' with your logo image path -->
+=======
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" onclick="location.href='/dashboard'"> <!-- Replace 'logo.png' with your logo image path -->
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
             <ul>
                 <li><a href="#">Restaurants</a></li>
                 <li><a href="/reservation">Reservations</a></li>

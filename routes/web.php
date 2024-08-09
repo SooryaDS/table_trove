@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Auth\RestaurantAuthController;
 use App\Http\Controllers\ProfileController;
@@ -16,12 +15,21 @@ Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
     Route::get('register', [CustomerAuthController::class, 'showRegistrationForm'])->name('register');
     Route::post('register', [CustomerAuthController::class, 'register']);
     Route::post('logout', [CustomerAuthController::class, 'logout'])->name('logout');
+<<<<<<< HEAD
 
     // Routes protected by the customer authentication middleware
     Route::middleware('auth:customer')->group(function() {
         Route::get('dashboard', [CustomerAuthController::class, 'dashboard'])->name('dashboard');
         Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
         Route::put('profile', [ProfileController::class, 'update'])->name('profile.update'); // Use PUT method for updating profile
+=======
+    Route::get('dashboard', [CustomerAuthController::class, 'dashboard'])->name('dashboard')->middleware('auth:customer');
+    
+    // Profile routes
+    Route::middleware('auth:customer')->group(function() {
+        Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
+        Route::put('profile', [ProfileController::class, 'update'])->name('profile.update'); // Use PUT method
+>>>>>>> 6c6e3d365ad8c86361073d2302430daeac28e5bc
     });
 });
 
